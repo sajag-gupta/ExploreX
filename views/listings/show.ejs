@@ -11,7 +11,7 @@
                     <img src="<%= listing.image.url %>" class="card-img-top" alt="<%= listing.title %> Image"
                         style="height: 280px; object-fit: cover;">
                     <div class="card-body">
-                        <p class="card-text"><strong>Listed By:</strong> <%= listing.owner.username %></p>
+                        <p class="card-text"><strong>Listed By:</strong> <%= listing.owner ? listing.owner.username : 'Unknown' %></p>
                         <p class="card-text"><strong>Description:</strong> <%= listing.description %></p>
                         <p class="card-text"><strong>Price:</strong> ₹ <%= listing.price.toLocaleString('en-IN') %></p>
                         <p class="card-text"><strong>Location:</strong> <%= listing.location %>, <%= listing.country %></p>
@@ -22,7 +22,7 @@
 
         <div class="row mt-4">
             <div class="col-md-6">
-                <% if (currentUser && currentUser._id.equals(listing.owner._id)) { %>
+                <% if (currentUser && listing.owner && currentUser._id.equals(listing.owner._id)) { %>
                 <form action="/listings/<%= listing._id %>/edit?_method=PUT" method="get" style="display: inline;">
                     <button type="submit" class="btn btn-dark add-button">Edit</button>
                 </form>
@@ -42,7 +42,7 @@
                         <% listing.reviews.forEach(review => { %>
                             <div class="review-card">
                                 <div class="review-info">
-                                    <p><strong>By: <%= review.author.username %></strong></p>
+                                    <p><strong>By: <%= review.author ? review.author.username : 'Anonymous' %></strong></p>
                                 </div>
                                 <div class="review-header">
                                     <% for (let i = 0; i < review.rating; i++) { %>
@@ -50,9 +50,11 @@
                                     <% } %>
                                 </div>
                                 <p class="review-body"><%= review.comment %></p>
+                                <% if (currentUser && review.author && currentUser._id.equals(review.author._id)) { %>
                                 <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
+                                <% } %>
                             </div>
                         <% }) %>
                     <% } else { %>
