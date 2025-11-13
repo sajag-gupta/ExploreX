@@ -1,0 +1,60 @@
+<!-- Pagination UI Component -->
+<!-- Add this to your views/listings/index.ejs file at the bottom -->
+
+<% if (totalPages > 1) { %>
+<nav aria-label="Page navigation" class="mt-4">
+    <ul class="pagination justify-content-center">
+        <!-- Previous Button -->
+        <li class="page-item <%= currentPage === 1 ? 'disabled' : '' %>">
+            <a class="page-link" href="?page=<%= currentPage - 1 %>" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+
+        <!-- Page Numbers -->
+        <% 
+        const startPage = Math.max(1, currentPage - 2);
+        const endPage = Math.min(totalPages, currentPage + 2);
+        
+        if (startPage > 1) { %>
+            <li class="page-item">
+                <a class="page-link" href="?page=1">1</a>
+            </li>
+            <% if (startPage > 2) { %>
+                <li class="page-item disabled">
+                    <span class="page-link">...</span>
+                </li>
+            <% } %>
+        <% } %>
+
+        <% for (let i = startPage; i <= endPage; i++) { %>
+            <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+                <a class="page-link" href="?page=<%= i %>"><%= i %></a>
+            </li>
+        <% } %>
+
+        <% if (endPage < totalPages) { %>
+            <% if (endPage < totalPages - 1) { %>
+                <li class="page-item disabled">
+                    <span class="page-link">...</span>
+                </li>
+            <% } %>
+            <li class="page-item">
+                <a class="page-link" href="?page=<%= totalPages %>"><%= totalPages %></a>
+            </li>
+        <% } %>
+
+        <!-- Next Button -->
+        <li class="page-item <%= currentPage === totalPages ? 'disabled' : '' %>">
+            <a class="page-link" href="?page=<%= currentPage + 1 %>" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Optional: Show listing count -->
+<p class="text-center text-muted">
+    Showing page <%= currentPage %> of <%= totalPages %> (Total: <%= totalListings %> listings)
+</p>
+<% } %>

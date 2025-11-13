@@ -1,0 +1,72 @@
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Start justifying the content */
+}
+
+.review-card {
+    width: calc(50% - 0.75rem); /* Adjust the width to fit two cards in a row with some spacing */
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
+}
+
+/* Style for the first review */
+.review-card:first-child {
+    margin-right: 1.5rem; /* Add margin to separate the first review from the second */
+}
+
+.star-container {
+    display: flex;
+}
+
+.review-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-info p {
+    margin: 0;
+    word-wrap: break-word; /* Allow long usernames to wrap */
+    min-width: 0; /* Ensure minimum width for wrapping */
+}
+
+.review-body,
+.review-comment {
+    margin-bottom: 0.5rem;
+}
+
+.review-rating {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.review-delete-btn {
+    background-color: #0a0909;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review-header {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 0.5rem;
+}
+
+.btn-success {
+    background-color: #28a745; /* Green color for success button */
+    color: #fff; /* Text color */
+}

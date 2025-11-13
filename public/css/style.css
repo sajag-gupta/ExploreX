@@ -1,0 +1,245 @@
+body {
+    font-family: 'Arial', sans-serif; /* Add more generic font families if needed */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: aliceblue;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+    margin-right: 0.5rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.card {
+    margin-bottom: 2rem;
+    border-radius: 1rem !important;
+    transition: all 0.3s ease;
+}
+
+.listing-card {
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0.75rem !important;
+}
+
+.card-title {
+    color: #222222;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: #717171;
+    font-size: 0.9rem;
+}
+
+.card-text p {
+    font-weight: 400;
+}
+
+.animation-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.animation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.add-button {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.dropdown-menu-country {
+    max-height: 200px; /* Adjust the max height as needed */
+    overflow-y: auto;
+}
+
+.dropdown-toggle {
+    background-color: #fff; /* Set background color to white */
+    color: #000; /* Set text color to black */
+}
+
+.search-btn{
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+}
+
+.search-btn:hover{
+    background-color: #fe424d;
+    color: #fff;  
+}
+
+.search-btn i{
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.search-input{
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 1rem;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 1rem;
+}
+
+.filter {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.filter:hover {
+    opacity: 1;
+    background-color: #f7f7f7;
+    transform: translateY(-2px);
+}
+
+.filter i {
+    font-size: 1.5rem;
+    color: #717171;
+    margin-bottom: 0.3rem;
+}
+
+.filter:hover i {
+    color: #FF385C;
+}
+
+.filter p {
+    font-size: 0.75rem;
+    margin: 0;
+    color: #222222;
+    font-weight: 500;
+}
+
+.tax-info {
+    display: none;
+}
+
+.tax-toggle {
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    height: auto;
+    padding: 0.5rem 1rem;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.tax-toggle:hover {
+    border-color: #222222;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tax-toggle .form-check-label {
+    font-size: 0.875rem;
+    color: #222222;
+    font-weight: 500;
+}
+
+    /* Media queries for hiding individual filter options */
+    @media (max-width: 768px) {
+        .filter:nth-child(n+7) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .filter:nth-child(n+5) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .form-switch {
+            font-size: 0.8rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .form-switch {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.8rem;
+        }
+    }
+
+    @media (max-width: 220px) {
+        .form-switch {
+            display: none; /* Hide the toggle switch when screen size is less than or equal to 576px */
+        }
+    }
+

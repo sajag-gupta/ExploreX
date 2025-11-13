@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-md bg-white navbar-light border-bottom sticky-top shadow-sm">
+    <div class="container-fluid px-4">
+        <!-- Brand with Icon and Name -->
+        <a class="navbar-brand d-flex align-items-center" href="/listings" style="font-weight: 600; font-size: 1.5rem; color: #FF385C;">
+            <i class="fa-solid fa-earth-americas me-2" style="font-size: 1.8rem;"></i>
+            <span>ExploreX</span>
+        </a>
+        
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <!-- Search Bar (centered on larger screens) -->
+            <div class="navbar-text mx-auto my-2 my-md-0">
+                <form class="d-flex" role="search">
+                    <div class="input-group" style="min-width: 300px;">
+                        <input class="form-control search-input border-end-0" type="search" placeholder="Search destinations..." style="border-radius: 50px 0 0 50px; border: 1px solid #ddd;">
+                        <button class="btn search-btn border-start-0" type="submit" style="border-radius: 0 50px 50px 0; background: #FF385C; color: white; border: 1px solid #FF385C;">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Right side navigation -->
+            <div class="navbar-nav ms-auto align-items-md-center">
+                <a class="nav-link d-flex align-items-center px-3" href="/listings/new" style="font-weight: 500;">
+                    <i class="fa-solid fa-circle-plus me-2"></i>
+                    <span>Add Listing</span>
+                </a>
+                <% if (!currentUser) { %>
+                <a class="nav-link px-3" href="/login" style="font-weight: 500;">
+                    <i class="fa-solid fa-right-to-bracket me-1"></i> Login
+                </a>
+                <a class="nav-link px-3" href="/signup">
+                    <button class="btn btn-primary btn-sm px-3" style="background: #FF385C; border: none; border-radius: 20px; font-weight: 500;">
+                        <i class="fa-solid fa-user-plus me-1"></i> Sign Up
+                    </button>
+                </a>
+                <% } else { %>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: 500;">
+                        <i class="fa-solid fa-circle-user me-1" style="font-size: 1.5rem; color: #717171;"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow">
+                        <li><a class="dropdown-item" href="/listings/new"><i class="fa-solid fa-plus-circle me-2"></i>Create Listing</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/logout"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

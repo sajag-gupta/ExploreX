@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Your custom styles here*/ 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-container">
+            <h1>Error <%= status %> - <%= message %></h1>
+            <p>Sorry, an error occurred while processing your request.</p>
+            <a href="/" class="btn btn-primary">Back to Home</a> <!-- Changed to btn-primary -->
+        </div>
+    </div>
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

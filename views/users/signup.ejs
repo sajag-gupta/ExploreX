@@ -1,0 +1,42 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <div class="container">
+        <br><br>
+        <h3 class="text-center mb-4"><b>Sign Up</b></h3>
+        <form action="/signup" method="post" style="max-width: 600px; margin: 0 auto;" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" name="username" required class="form-control" placeholder="Enter your username">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a username.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" required class="form-control" placeholder="Enter your email">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" name="password" required class="form-control" placeholder="Enter your password">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required class="form-control" placeholder="Confirm your password">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please confirm your password.</div>
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-dark add-button">Sign Up</button>
+        </form>
+        <br><br>
+    </div>
+</body>
+</html>
